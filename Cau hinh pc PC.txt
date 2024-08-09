@@ -1,0 +1,3 @@
+vlan10: vpc6, vpc9
+vlan20: vpc7, vpc10
+vlan10: vpc8, vpc11

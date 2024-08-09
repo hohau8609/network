@@ -1,0 +1,37 @@
+en
+conf t
+hostname SW4
+vtp mode client
+vtp domain learn
+vtp password 123456
+
+int VLAN 1
+no sh
+ip add 192.168.1.5 255.255.255.0
+exit
+
+int e0/3
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+int e0/0
+switchport trunk encapsulation dot1q
+switchport mode trunk
+exit
+
+int range e1/0-3
+switchport mode access
+switchport access vlan 10
+exit
+
+int range e2/0-3
+switchport mode access
+switchport access vlan 20
+exit
+
+int range e3/0-3
+switchport mode access
+switchport access vlan 30
+exit
+
